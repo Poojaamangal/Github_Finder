@@ -20,6 +20,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
+                     sh 'ls -al'
                     sh 'docker build -t $DOCKER_IMAGE .'
                 }
             }
