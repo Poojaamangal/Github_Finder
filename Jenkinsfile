@@ -29,9 +29,9 @@ pipeline {
             steps {
                 script {
                     // Log in to Docker Hub
-                    docker.withRegistry('https://index.docker.io/v1/',fe164ee4-2f9c-48d4-a54c-2371fc792176) {
+                    docker.withRegistry('https://index.docker.io/v1/', "$DOCKER_CREDENTIALS_ID") {
                         // Push the Docker image
-                        sh 'docker push $mangal23/github_finder:latest'
+                        sh 'docker push $DOCKER_IMAGE'
                     }
                 }
             }
@@ -47,4 +47,3 @@ pipeline {
         }
     }
 }
-
